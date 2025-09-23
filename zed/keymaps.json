@@ -1,0 +1,91 @@
+[
+  {
+    "context": "ProjectPanel && !editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-enter": "editor::ToggleCodeActions",
+      "cmd-6": "project_panel::CollapseAllEntries"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-shift-e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-.": "outline::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-b": "editor::GoToDefinition"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-1": "project_panel::ToggleFocus",
+      "cmd-2": "pane::DeploySearch",
+      // "cmd-3": "git_panel::ToggleFocus",
+      "cmd-4": "zed::Extensions",
+      "cmd-5": "workspace::Open"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-c": "workspace::CopyRelativePath"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-3": [
+        "task::Spawn",
+        {
+          "task_name": "Lazygit"
+        }
+      ],
+      // Multi-cursor suppor
+      "cmd-alt-up": "editor::AddSelectionAbove",
+      "cmd-alt-down": "editor::AddSelectionBelow",
+      // Line operations
+      "cmd-backspace": "editor::DeleteLine",
+      "alt-up": "editor::MoveLineUp",
+      "alt-down": "editor::MoveLineDown",
+      "cmd-d": "editor::DuplicateLineDown",
+      "cmd-shift-l": "editor::SelectAllMatches",
+      "cmd-f2": "editor::SelectAllMatches",
+      // Comments
+      "cmd-/": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-j": "workspace::ToggleBottomDock",
+      "shift shift": "file_finder::Toggle",
+      "cmd-shift-p": "command_palette::Toggle",
+      "cmd-shift-f": "project_search::ToggleFocus",
+      "cmd-shift-h": [
+        "pane::DeploySearch",
+        {
+          "replace_enabled": true
+        }
+      ]
+    }
+  }
+]
+

@@ -1,0 +1,175 @@
+{
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "icon_theme": "JetBrains New UI Icons (Dark)",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "JetBrains New Dark"
+  },
+  "base_keymap": "VSCode",
+  "buffer_font_size": 12,
+  "buffer_font_weight": 400,
+  "ui_font_size": 16,
+  "ui_font_weight": 400,
+  "tab_size": 2,
+  "hard_tabs": false,
+  "soft_wrap": "bounded",
+  "preferred_line_length": 120,
+  "scroll_beyond_last_line": "off",
+  "cursor_blink": true,
+  "cursor_shape": "bar",
+  "minimap": {
+    "show": "never"
+  },
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "autosave": "on_window_change",
+  "format_on_save": "on",
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_final_newline_on_save": true,
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "useTabs": true,
+    "tabWidth": 2,
+    "arrowParens": "avoid"
+  },
+  "use_autoclose": true,
+  "linked_edits": true,
+  "gutter": {
+    "line_numbers": true,
+    "folds": false
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+    "code_actions": false
+  },
+  "project_panel": {
+    "dock": "left",
+    "default_width": 240,
+    "file_icons": true,
+    "folder_icons": true,
+    "git_status": true,
+    "auto_fold_dirs": false,
+    "indent_size": 14
+  },
+  "terminal": {
+    "dock": "bottom",
+    "default_height": 320,
+    "working_directory": "current_project_directory",
+    "button": false
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.expo",
+    "**/.expo-shared",
+    "**/.idea",
+    "**/.nuxt",
+    "**/.DS_Store"
+  ],
+  "git_panel": {
+    "sort_by_path": false,
+    "button": true,
+    "dock": "left",
+    "default_width": 360
+  },
+  "status_bar": {
+    "cursor_position_button": false,
+    "active_language_button": false
+  },
+  "tabs": {
+    "file_icons": false,
+    "git_status": false,
+    "close_position": "right"
+  },
+  "languages": {
+    "JavaScript": {
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "TypeScript": {
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "TSX": {
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "HTML": {
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "CSS": {
+      "prettier": {
+        "allowed": true
+      }
+    },
+    "JSON": {
+      "prettier": {
+        "allowed": true
+      }
+    }
+  },
+  "jsx_tag_auto_close": {
+    "enabled": true
+  },
+  "show_completions_on_input": true,
+  "show_completion_documentation": true,
+  "auto_signature_help": false,
+  "use_on_type_format": true,
+  "inlay_hints": {
+    "enabled": false
+  },
+  "diagnostics": {
+    "include_warnings": true,
+    "button": false
+  },
+  "search": {
+    "button": false,
+    "whole_word": false,
+    "case_sensitive": false,
+    "regex": false
+  },
+  "confirm_quit": true,
+  "file_types": {
+    "JavaScript": [
+      "js",
+      "mjs"
+    ],
+    "TypeScript": [
+      "ts"
+    ],
+    "TSX": [
+      "tsx"
+    ],
+    "JSON": [
+      "json"
+    ],
+    "JSONC": [
+      "jsonc"
+    ]
+  }
+}
+
