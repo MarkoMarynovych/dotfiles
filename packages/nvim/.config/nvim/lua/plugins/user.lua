@@ -23,7 +23,7 @@ return {
     opts = function(_, opts)
       local cmp = require("cmp")
       -- Setup vim-react-snippets
-      require("vim-react-snippets").lazy_load()
+      require("vim-react-snippets").setup()
       -- Modify default mappings or other cmp configurations
       opts.mapping["<C-x>"] = cmp.mapping.select_next_item()
       return opts
