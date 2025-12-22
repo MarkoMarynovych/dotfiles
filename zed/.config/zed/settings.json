@@ -1,4 +1,5 @@
 {
+  "disable_ai": true,
   "outline_panel": {
     "dock": "right"
   },
@@ -154,22 +155,10 @@
   },
   "confirm_quit": true,
   "file_types": {
-    "JavaScript": [
-      "js",
-      "mjs"
-    ],
-    "TypeScript": [
-      "ts"
-    ],
-    "TSX": [
-      "tsx"
-    ],
-    "JSON": [
-      "json"
-    ],
-    "JSONC": [
-      "jsonc"
-    ]
+    "JavaScript": ["js", "mjs"],
+    "TypeScript": ["ts"],
+    "TSX": ["tsx"],
+    "JSON": ["json"],
+    "JSONC": ["jsonc"]
   }
 }
-

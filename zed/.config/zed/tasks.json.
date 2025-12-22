@@ -1,0 +1,5 @@
+{
+    "label": "Lazygit",
+    "command": "/usr/bin/lazygit", // Вказуємо повний шлях
+    "use_new_terminal": true
+}

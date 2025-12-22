@@ -1,0 +1,90 @@
+[
+	{
+		"context": "ProjectPanel && !editing",
+		"bindings": {
+			"a": "project_panel::NewFile",
+			"shift-a": "project_panel::NewDirectory"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"alt-enter": "editor::ToggleCodeActions",
+			"alt-6": "project_panel::CollapseAllEntries"
+		}
+	},
+	{
+		"bindings": {
+			"alt-shift-e": "project_panel::ToggleFocus"
+		}
+	},
+	{
+		"bindings": {
+			"alt-.": "outline::Toggle"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"alt-b": "editor::GoToDefinition"
+		}
+	},
+	{
+		"bindings": {
+			"alt-1": "project_panel::ToggleFocus",
+			"alt-2": "pane::DeploySearch",
+			// "alt-3": "git_panel::ToggleFocus",
+			"alt-4": "zed::Extensions",
+			"alt-5": "workspace::Open"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"ctrl-shift-c": "workspace::CopyRelativePath"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"alt-3": [
+				"task::Spawn",
+				{
+					"task_name": "Lazygit"
+				}
+			],
+			// Multi-cursor suppor
+			"alt-alt-up": "editor::AddSelectionAbove",
+			"alt-alt-down": "editor::AddSelectionBelow",
+			// Line operations
+			"alt-backspace": "editor::DeleteLine",
+			"alt-up": "editor::MoveLineUp",
+			"alt-down": "editor::MoveLineDown",
+			"alt-d": "editor::DuplicateLineDown",
+			"alt-shift-l": "editor::SelectAllMatches",
+			"alt-f2": "editor::SelectAllMatches",
+			// Comments
+			"alt-/": [
+				"editor::ToggleComments",
+				{
+					"advance_downwards": false
+				}
+			]
+		}
+	},
+	{
+		"context": "Workspace",
+		"bindings": {
+			"alt-j": "workspace::ToggleBottomDock",
+			"shift shift": "file_finder::Toggle",
+			"alt-shift-p": "command_palette::Toggle",
+			"alt-shift-f": "project_search::ToggleFocus",
+			"alt-shift-h": [
+				"pane::DeploySearch",
+				{
+					"replace_enabled": true
+				}
+			]
+		}
+	}
+]
