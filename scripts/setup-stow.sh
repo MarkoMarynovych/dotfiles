@@ -1,24 +1,21 @@
 #!/bin/bash
 # scripts/setup-stow.sh
 
-# 1. Get the directory where this script is located (~/dotfiles/scripts)
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# 2. Go UP one level to the dotfiles root (~/dotfiles)
 DOTFILES_ROOT="$(dirname "$SCRIPT_DIR")"
-cd "$DOTFILES_ROOT"
+PACKAGES_DIR="$DOTFILES_ROOT/packages"
 
-echo ":: Stowing dotfiles from $DOTFILES_ROOT..."
+cd "$PACKAGES_DIR" || { echo "Error: packages/ directory not found"; exit 1; }
 
-# 3. Define directories to exclude (scripts folder, git, etc)
-# Use 'find' to get only directories in the root, excluding hidden ones and the 'scripts' folder
-STOW_FOLDERS=$(find . -maxdepth 1 -type d -not -path '*/.*' -not -name 'scripts' -not -name '.' | sed 's|./||')
+echo ":: Stowing dotfiles from $PACKAGES_DIR..."
+
+# Find all package folders (exclude hidden ones)
+STOW_FOLDERS=$(find . -maxdepth 1 -type d -not -path '*/.*' -not -name '.' | sed 's|./||')
 
 for folder in $STOW_FOLDERS; do
     echo "Stowing $folder..."
-    # -R = Restow (refresh links)
-    # -t ~ = Target is Home Directory (Explicitly set target to be safe)
-    stow -R -t ~ "$folder"
+    # --adopt is KEY here. It forces Stow to overwrite the old 'bad' links.
+    stow --adopt -R -t ~ "$folder"
 done
 
 echo ":: Done."
