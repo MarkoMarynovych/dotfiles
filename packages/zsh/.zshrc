@@ -8,15 +8,14 @@ fi
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# ZSH_THEME is disabled because we are loading Powerlevel10k manually (the Arch way).
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-
 # Which plugins would you like to load? (zsh-autosuggestions and zsh-syntax-highlighting
 # are loaded manually at the end of the file).
 plugins=(git)
 
-# Load Oh My Zsh.
-source $ZSH/oh-my-zsh.sh
+# Load Oh My Zsh (if installed)
+if [[ -f "$ZSH/oh-my-zsh.sh" ]]; then
+  source $ZSH/oh-my-zsh.sh
+fi
 
 # --- User Customizations Below This Line ---
 
@@ -61,9 +60,9 @@ if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
 elif [[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-export GEMINI_API_KEY="AIzaSyB9XU4_6AsqwpA0VR08--ifpxklpp02-zo"
-
-. "$HOME/.local/share/../bin/env"
 export GEMINI_API_KEY="AIzaSyA3y0fOqFC-wibnCLRu0g5-UfdgaBfICcs"
 
-export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:~/.local/share/flatpak/exports/share
+# Flatpak (Linux only)
+if [[ -d /var/lib/flatpak/exports/share ]]; then
+  export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:~/.local/share/flatpak/exports/share
+fi
