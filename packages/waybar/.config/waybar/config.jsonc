@@ -16,6 +16,7 @@
   "modules-right": [
     "group/tray-expander",
     "bluetooth",
+    "custom/handy",
     "pulseaudio",
     "cpu",
     "network",
@@ -91,8 +92,8 @@
     "format-wifi": "{bandwidthDownBytes} {icon}",
     "format-ethernet": "{bandwidthDownBytes} 󰀂",
     "format-disconnected": "󰤮",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)",
+    "tooltip-format-ethernet": "Connected",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
@@ -150,12 +151,14 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "omarchy-launch-or-focus-tui wiremix",
+    "on-click": "omarchy-launch-audio",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
+      "headphone": "",
+      "headset": "",
       "default": [
         "",
         "",
@@ -182,6 +185,39 @@
     "on-click": "omarchy-cmd-screenrecord",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
     "signal": 8,
+    "return-type": "json"
+  },
+  "custom/handy": {
+    "exec": "pgrep -x handy > /dev/null && echo '{\"text\": \"󰍬\", \"tooltip\": \"Handy - Click to toggle recording\\nRight-click to open\", \"class\": \"active\"}' || echo '{\"text\": \"\", \"tooltip\": \"Handy not running - Click to start\", \"class\": \"inactive\"}'",
+    "return-type": "json",
+    "interval": 2,
+    "on-click": "pgrep -x handy && pkill -USR2 -n handy || WEBKIT_DISABLE_DMABUF_RENDERER=1 ~/Applications/Handy_0.6.9_amd64.AppImage &",
+    "on-click-right": "hyprctl dispatch focuswindow class:Handy",
+    "tooltip": true
+  },
+  "custom/voxtype": {
+    "exec": "omarchy-voxtype-status",
+    "return-type": "json",
+    "format": "{icon}",
+    "format-icons": {
+      "idle": "",
+      "recording": "󰍬",
+      "transcribing": "󰔟"
+    },
+    "tooltip": true,
+    "on-click-right": "omarchy-voxtype-config",
+    "on-click": "omarchy-voxtype-model"
+  },
+  "custom/idle-indicator": {
+    "on-click": "omarchy-toggle-idle",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "signal": 9,
+    "return-type": "json"
+  },
+  "custom/notification-silencing-indicator": {
+    "on-click": "omarchy-toggle-notification-silencing",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+    "signal": 10,
     "return-type": "json"
   },
   "tray": {

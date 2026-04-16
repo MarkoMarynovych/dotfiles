@@ -1,5 +1,14 @@
 {
-  "disable_ai": true,
+  "agent": {
+    "default_model": {
+      "provider": "openrouter",
+      "model": "google/gemini-3-flash-preview",
+      "enable_thinking": true
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "disable_ai": false,
   "outline_panel": {
     "dock": "right"
   },
@@ -75,6 +84,7 @@
     "**/.DS_Store"
   ],
   "git_panel": {
+    "tree_view": true,
     "sort_by_path": false,
     "button": true,
     "dock": "left",
