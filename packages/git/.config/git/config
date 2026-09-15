@@ -29,3 +29,9 @@
 [user]
 	email = markomarynovych@gmail.com
 	name = MarkoMarynovych
+
+# identity по каталогах, обидві живуть поза цим репо
+[includeIf "gitdir:~/Desktop/work/"]
+	path = ~/.gitconfig-softcery
+[includeIf "gitdir:~/Desktop/personal/"]
+	path = ~/.gitconfig-personal
